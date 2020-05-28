@@ -65,18 +65,40 @@
      </ul>
      <a href = "blanc.html">ПОДРОБНЕЕ О КОМПАНИИ</a>
 </section>
+
 <section>
     <h3>КОНТАКТЫ</h3>
-     <p>
-     	Вы можете забрать товар сами, заехав в наш офис:
-     </p>
-     <a href = "blanc.html">
+     <p>Вы можете забрать товар сами, заехав в наш офис:</p>
+       <img src="img/icon-close.svg" alt="Закрыть окно" width="25" height="25">
+       <a href = "img/map-popup.png" class="ulightbox" target="_blank">
        <img src="img/map-popup.png" alt="Карта, как к нам проехать" width="300" height="200">
      Как проехать</a>
      <a href = "blanc.html">ЗАБЛУДИЛИСЬ? НАПИШИТЕ НАМ!</a>
+</div>
 </section>
-	
+
+<section class="popup" onclick="myFunction()">
+    <h3 hidden="Обратная связь">Обратная связь</h3>
+         <div>
+          <img src="img/icon-close.svg" alt="Закрыть окно" width="25" height="25">
+           <span>Ваше имя:</span>
+           <input type="text" name="NameSurname" placeholder="Имя Фамилия">
+         </div>
+         <div>
+           <span>Ваш e-mail:</span>
+           <input type="text" name="eMail" placeholder="email@example.com">
+         </div>
+           <div>
+           <span>Текст письма:</span>
+           <textarea></textarea>
+         </div>
+    <button>Оформить заказ</button>
+  </section>
 </main>
+
+
+
+
 
 
 <footer>
@@ -101,6 +123,7 @@
      </div>
     </div>
 
+
   <div class = "footer-bottom">
      <div id="container-bottom">
 		<p>© 2010-2019 Компания "Техномарт"Все права защищены</p>
@@ -123,7 +146,6 @@
     <a class href = "blanc.html">htmlacademy.ru</a>
   </div>
 </footer>
-
 
   </body>
 </html>
