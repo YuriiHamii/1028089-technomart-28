@@ -1,0 +1,863 @@
+:root {
+  --basic-black: #ffffff;
+  --basic-extra-dark: #242424;
+  --basic-dark: #aba9a7;
+  --basic-neutral: #e5e5e5;
+  --basic-extra-light: #f8f5f2;
+  --basic-white: #ffffff;
+
+  --special: #663d15;
+}
+
+/*Для <body> обнулим отступы, 
+так как они не нужны. 
+Укажем шрифт, размер и цвет текста, 
+а также сразу укажем фон, (для Барбершопа 
+чтобы белый текст было видно на чёрном фоне.)*/
+body {
+    margin: 0; /*960px ломается структура*/
+    padding: 0;
+
+    font-family: "PT Sans", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: normal;
+    color: #000000;
+    
+    background-color: #ffffff;
+
+
+}
+/* Подключает шрифты */
+@font-face {
+    font-family: 'Cuprum-Regular';
+    src: url('cuprum.woff2') format('woff2');
+    src: url('cuprum.woff') format('woff'); 
+    font-weight: normal;
+    font-style: normal;
+}
+/* У ссылок уберём подчёркивание,
+ так как их нет во всем проекте. */
+a {
+    text-decoration: none;
+}
+
+/*Всем изображением укажем max-width: 100%,
+ чтобы они не вылезали за пределы своих родительских элементов,
+и укажем автоматическую высоту,
+чтобы изменение размеров было пропорциональным.*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+/* Это - универсальный класс 
+для всех скрытых элементов на страницах */
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+
+    -webkit-clip-path: inset(100%);
+
+            clip-path: inset(100%);
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+/*Стилизуем у навигации в блоке текст - ссылки */
+
+.navigation-list a {
+  font-size: 17px;
+  line-height: 17px;
+  font-weight: normal;
+  
+}
+
+/*Стилизуем у навигации блок с навигацией, добавим фон*/
+.navigation-list {
+    background-color: #32425c;
+}
+
+/*Так как навигация это <ul>, 
+то уберем стандартную стилизацию списка, 
+так как она нам не нужна.*/
+
+.navigation-list {
+  list-style: none;
+}
+
+
+/*Ссылки это интерактивные элементы сайта, 
+поэтому нужно определить все возможные состояния.
+
+Состояния наведения делается с помощью псевдокласса
+ :hover, а фокуса :focus.*/
+.site-navigation-current a:not([href]) {
+  background-color: var(--basic-black);
+}
+/* User navigation */
+.site-navigation a,
+.user-navigation a {
+  color: var(--basic-white);
+}
+.site-navigation a:hover,
+.site-navigation a:focus,
+.user-navigation a:hover,
+.user-navigation a:focus {
+  background-color: var(--basic-extra-dark);
+}
+
+/*Пройдёмся по преимуществам. 
+Отключим стили списка у всего блока. 
+Весь текст отцентрируем и зададим 
+текстовые параметры для заголовка.*/
+
+
+
+/* header*/
+/* Cтили для header */
+
+html, body {
+    min-width: 960px;
+}
+
+
+.wrapper-top {
+    background-color: #293449;
+}
+
+
+/* Центрирует содержание header */
+.container {
+    width:  940px;
+    margin: 0 auto;
+    padding: 0 10px; 
+}
+
+
+/*В макете Компания "Техномарт", Контакты 
+ находятся в одном блоке section. 
+ Разметку мы их тоже объединили в 
+ <div class="left-block"><!--Левый блок про компанию Техномарт-->
+ <div class="right-block"><!--Правый блок про контакты компании-->*/
+
+/*Добавим этому большому разделу фоновое изоражение (если есть),
+ зададим цвет фона и шрифта, а также изменим
+размер шрифта для заголовков в разделах.*/
+.left-block h2{
+    width: 605px;
+    margin-right: 55px;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.right-block h2{
+    background-image: url("img/map-popup.png");
+    width: 310px;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+/*А теперь стилизуем внутренние блоки, Компания техномарт, Контакты.
+ У доставки отключим стилизацию списков, а галерее укажем
+  фон и обводку (если надо).*/
+
+.delivery-choice {
+  list-style: none;
+}
+
+/* Gallery */
+
+.left-block,
+.right-block {
+  border: 7px solid green;
+}
+
+/*Отключим стилизацию списков,ссылки карточек товаров,
+ популярные производители, меню(доставка, гарантия, кредит)
+фуутер навигацию и материалы, технику, инструмент, спецпредложения,
+добавим обводку (если надо).*/
+
+.footer-nav {
+  list-style: none;
+  
+}
+.footer-products {
+  list-style: none;
+}
+.social-button-list {
+  list-style: none;   
+}
+
+.list-popular-enterprises {
+  list-style: none;   
+}
+
+
+/*Стилизуем кнопки.
+Используем значение inherit для свойства font
+для переопределения значения по умолчанию.
+выровняем текст по центру, 
+укажем цвет и размер, а также фон. 
+Отключим стили для обводки.*/
+/* Button */
+.button {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+  vertical-align: middle;
+  text-transform: uppercase;
+  background-color: red;
+  border: none;
+  border-radius: 3px;
+  padding: 11px 61px;
+  min-width: 131px; 
+}
+
+/*Так как кнопка это интерактивный элемент
+ укажем стили для состояния фокуса и наведения*/
+.button:hover,
+.button:focus,
+.button:active {
+  background-color: green;
+}
+
+.button.disabled,
+.button:disabled {
+  cursor: default;
+  opacity: 0.5;
+  background-color: red;
+}
+
+/*Полям ввода в форме записи добавим 
+наследование шрифта от родителя, 
+прозрачный фон и черную обводку.*/
+/* Appointment */
+
+.search input {
+  font: inherit;
+  background-color: #ffffff; /*transparent*/
+  border: 2px solid black;
+}
+
+.search input:focus {
+  border-color: blue;
+}
+
+/*Для подвала укажем цвет текста и фона,
+ чтобы текст был читаем.*/
+/* Main footer */
+.footer-wrapper {
+    background-color: #32425c;
+    color: #ffffff;
+    background-position: 0 0;
+    background-repeat: repeat;
+}
+
+.footer-bottom {
+    width: 100%;
+    background-color: #293449;
+}
+/*
+не получается сделать весь текст фуутера сплошным цветом белый
+не получается применить класс.
+.footer-nav { 
+color: #ffffff;
+}
+*/
+
+
+/*Меняем цвет ссылок и добавляем подчеркивание.
+Добавим стили для состояния наведения и фокуса.*/
+.footer-products a {
+  color: #ffd180;
+  text-decoration: none;
+}
+
+.footer-products a:hover,
+.footer-products a:focus {
+  text-decoration: underline;
+}
+
+.footer-nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+  text-decoration: underline;
+}
+
+.feedback-mail a {
+  color: #ffd180;
+  text-decoration: none;
+}
+
+.feedback-mail a:hover,
+.feedback-mail a:focus {
+  text-decoration: underline;
+}
+
+/*Зададим базовые стили для раздела социальных сетей.
+ Выравниваем текст по центру и отменяем стили 
+ по умолчанию у списка.
+Задаем белый цвет текста для кнопок.*/
+.footer-social {
+  text-align: center;
+}
+
+.footer-social ul {
+  list-style: none;
+}
+
+.footer-social h2 {
+  font-size: 14px;
+
+}
+
+/* Social button */
+
+.social-button {
+  color: inherit;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: #ffffff;
+}
+
+
+/*У блока копирайта укажем цвет текста и фона.*/
+.footer-copyright .link-developer:hover,
+.footer-copyright .link-developer:focus {
+  color: ;
+  background-color: grey;
+}
+
+/*Осталось сделать базовую стилизацию для модальных окон.
+ Задаем цвет текста, фоновое изображение и 
+ подходящий цвет фона (если надо).*/
+
+/* Modal */
+
+.modal {
+  color: var(--basic-black);
+  background-color: var(--basic-extra-light);
+  background-image: url("../img/pattern-light.jpg");
+  background-position: 0 0;
+  background-repeat: repeat;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+    position: fixed;
+    color: #000000;
+    background-color: #ffffff;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+  /*background-repeat: repeat;
+    background-position: 0 0;*/
+}
+
+/*Зададим размеры шрифта в заголовках модальных окон.*/
+.modal-login h2 {
+  font-size: 30px;
+  line-height: 42px;
+}
+
+/*Зададим наследование родительского шрифта, 
+сделаем текст прописным. 
+Установим черный текст, контрастный светлый фон
+ и черную обводку.*/
+
+/* Login form */
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  font: inherit;
+  color: var(--basic-black);
+  text-transform: uppercase;
+  background-color: var(--basic-extra-light);
+  border: 2px solid var(--basic-black);
+}
+
+.login-form input:focus {
+  border-color: var(--special);
+}
+
+/*Зададим иконки для полей ввода.*/
+.login-icon-user {
+  background-image: url("../img/user.svg");
+  background-position: 270px center;
+  background-repeat: no-repeat;
+}
+
+.login-icon-password {
+  background-image: url("../img/lock.svg");
+  background-position: 270px center;
+  background-repeat: no-repeat;
+}
+
+/*Осталось сделать стилизацию ссылок. 
+Зададим цвет текста и подчеркивание. 
+Отменим подчеркивание при наведении и фокусе.
+Использую для страницы каталог мои заказы - личный кабинет*/
+/* Restore */
+/*
+.restore {
+  color: var(--basic-black);
+  text-decoration: underline;
+}
+
+.restore:hover,
+.restore:focus {
+  text-decoration: none;
+}
+*/
+
+/*Добавим чёрный фон для шапки внутренних страниц(eсли есть необходимость
+Для контентной части внутрнних страниц добавим светлый фон (если есть необходимость)*/
+
+/*Зададим размер шрифта для заголовка h1 */
+.about-hammer-drill {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+/*CSS Каталог*/
+
+/*Перейдём к навигационной цепочке или как её обычно называют
+ хлебные крошки.
+Отключим стили для списка, так как они нам не нужны.
+Зададим текстовые параметры для ссылок: 
+размер, цвет, наведение и фокус.*/
+
+/* Breadcrumbs */
+.catalog-navigation, 
+.filter-firms-list,
+.filter-electricity-list,
+.sorting-block  {
+  list-style: none;
+}
+
+
+
+.catalog-sales-list li {
+  list-style: none; 
+}
+
+.user-menu li {
+ list-style: none;  
+}
+
+.navigation-list a {
+  list-style: none; 
+  color:white;
+}
+
+
+/*Нам осталось сделать стилизацию пагинации.
+ Сбросим стили списка по умолчанию.*/
+/*выполнено стр.469 работает, на 688 не работает*/
+
+
+.pagination-type li{
+   list-style: none; 
+}
+/*Укажем для ссылок фон и цвет текста,
+ а также добавим стилизацию для фокуса и наведения.*/
+
+.pagination-type a {
+  color: black;
+  background-color: white;
+}
+
+.pagination-type a:hover,
+.pagination-type a:focus,
+.pagination-type a:active {
+  background-color: #ee3643;
+}
+
+/*стилизацию пагинации */
+.pagination-type {
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: normal;
+  color: #000000;
+}
+
+.pagination-type {
+  text-transform: uppercase;
+}
+.pagination-type {
+    display: flex;
+}
+
+.pagination-button {
+  display: flex;
+  margin-right: 10px;
+  padding-top: 9px;
+  padding-right: 14px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+}
+
+.pagination-type .pagination-item-active {
+  color: #ffffff;
+  background-color: #ee3643;
+  border: 1px solid #ee3643;
+}
+
+/*Стиль ссылки на текущую страницу отличается.
+Задаем ,белый цвет текста и красный фон.
+А чтобы стиль ссылки не менялся при взаимодействии,
+дублируем стилевые правила текущей ссылки для
+различных состояний (наведение, фокус, активная ссылка)*/
+.pagination-item-active a,
+.pagination-item-active a:hover,
+.pagination-item-active a:focus,
+.pagination-item-active a:active {
+  color: white);
+  background-color: #ee3643;
+}
+
+
+
+.sorting-block a {
+  color: black;
+}
+
+/*Ссылки Мои заказы, Личный кабинет*/
+.user-menu li {
+  color: black;
+  text-decoration: underline;
+}
+
+.user-menu li a:hover,
+.user-menu li a:focus {
+  color: red;
+}
+/*Ссылки По цене, по типу, по функционалу*/
+
+
+.sorting-block a:hover,
+.sorting-block a:focus {
+  text-decoration: red underline dotted;
+}
+
+/*кнопки Оформить заказ - Корзина*/
+/*Сетка для блока*/
+.navigation {
+  margin-bottom: 67px;
+}
+
+/**/
+
+/*сброс внутренних и внешних отступов в блоке  навигации*/
+.navigation-list {
+  margin: 0;
+  padding: 0;
+}
+
+
+.navigation-list {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 550px;
+   margin-top: 36px;
+   flex-wrap: wrap;
+}
+
+
+.navigation-list a {
+  display: block;
+  padding: 18px 31px;
+  vertical-align: middle;
+}
+
+
+.navigation-list {
+  width: 940px;
+}
+
+.navigation-list {
+  box-shadow: 0px 6px #293449;
+}
+
+.navigation-list a:hover,
+.navigation-list a:focus {
+  background-color: #293449;
+}
+
+
+.navigation-list a:active {
+  background-color: #1d2739;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.navigation-list {
+  padding-top: 1px;
+  padding-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Барбершоп - Демонстрация*/
+
+/*Перейдём к фильтрам. Уберём стилизацию у списка.
+ Зададим размер и цвет текста. 
+ Добавим цвет для фокуса и наведения.*/
+/* Filters */
+
+.filter legend {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.filter ul {
+  list-style: none;
+  line-height: 18px;
+}
+
+.filter-input-checkbox:hover + label,
+.filter-input-checkbox:focus + label {
+  color: var(--special);
+}
+
+
+/*Начнём стилизовать каталог. 
+Опишем список. 
+Отключим стили для списков, 
+так как они нам не нужны. 
+А пунктам зададим фон, тени и цвет*/
+
+/* Catalog */
+
+.catalog-list {
+  list-style: none;
+}
+
+.catalog-item {
+  background-color: var(--basic-extra-light);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+}
+
+.catalog-item a {
+  color: var(--basic-black);
+}
+
+
+/*Для заголовка укажем размер и межстрочный интервал.*/
+.catalog-item h3 {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/*Название категории товара сделаем строчными*/
+.catalog-category {
+  text-transform: none;
+}
+
+
+/*Цене товара зададим параметры шрифта, 
+выравнивание текста по центру, светлый фон*/
+
+.catalog-item-price b {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  background-color: var(--basic-neutral);
+}
+
+/*Кнопке укажем цвет и межстрочный интервал.*/
+
+.catalog-item-price .button {
+  line-height: 20px;
+  color: var(--basic-white);
+}
+
+
+
+
+
+
+
+
+
+.logo-technomart {
+    padding-top: 10px;
+    padding-bottom: 8px;
+    padding-left: 50px;
+    padding-right: 48px;
+    min-width: 122px;
+    text-align: center;
+    vertical-align: middle;
+
+    background-color: #ee3643;
+    -webkit-box-shadow: 0px 5px 0px 0px #b52933;
+            box-shadow: 0px 5px 0px 0px #b52933;
+}
+
+/*Состояния наведения делается с помощью псевдокласса
+ :hover, а фокуса :focus.*/
+.logo-technomart:hover {
+    background-color: #ca2c37;
+}
+
+.logo-technomart:active {
+    background-color: #ba2732;
+}
+
+/*верхний блочный элемент - меню - используем автопрефиксы*/
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
