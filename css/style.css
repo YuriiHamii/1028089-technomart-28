@@ -1,61 +1,33 @@
-:root {
-  --basic-black: #ffffff;
-  --basic-extra-dark: #242424;
-  --basic-dark: #aba9a7;
-  --basic-neutral: #e5e5e5;
-  --basic-extra-light: #f8f5f2;
-  --basic-white: #ffffff;
-
-  --special: #663d15;
-}
-
 /*Для <body> обнулим отступы, 
 так как они не нужны. 
 Укажем шрифт, размер и цвет текста, 
 а также сразу укажем фон, (для Барбершопа 
 чтобы белый текст было видно на чёрном фоне.)*/
 body {
-    margin: 0; /*960px ломается структура*/
+    margin: 0;
     padding: 0;
 
-    font-family: "PT Sans", "Arial", sans-serif;
+    font-family: "Cuprum", "Arial", sans-serif;
     font-size: 14px;
     line-height: 24px;
     font-weight: normal;
     color: #000000;
-    
+
     background-color: #ffffff;
+}
 
 
-}
-/* Подключает шрифты */
-@font-face {
-    font-family: 'Cuprum-Regular';
-    src: url('cuprum.woff2') format('woff2');
-    src: url('cuprum.woff') format('woff'); 
-    font-weight: normal;
-    font-style: normal;
-}
-/* У ссылок уберём подчёркивание,
- так как их нет во всем проекте. */
 a {
     text-decoration: none;
-}
+    }
 
-/*Всем изображением укажем max-width: 100%,
- чтобы они не вылезали за пределы своих родительских элементов,
-и укажем автоматическую высоту,
-чтобы изменение размеров было пропорциональным.*/
 img {
     max-width: 100%;
     height: auto;
+
 }
 
-
-
-
-/* Это - универсальный класс 
-для всех скрытых элементов на страницах */
+/*  скрытые эл-ты */
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
@@ -71,689 +43,53 @@ input[type="radio"].visually-hidden {
 
     -webkit-clip-path: inset(100%);
 
-            clip-path: inset(100%);
+    clip-path: inset(100%);
     clip: rect(0, 0, 0, 0);
     overflow: hidden;
 }
 
-/*Стилизуем у навигации в блоке текст - ссылки */
 
-.navigation-list a {
-  font-size: 17px;
-  line-height: 17px;
-  font-weight: normal;
-  
-}
-
-/*Стилизуем у навигации блок с навигацией, добавим фон*/
-.navigation-list {
-    background-color: #32425c;
-}
-
-/*Так как навигация это <ul>, 
-то уберем стандартную стилизацию списка, 
-так как она нам не нужна.*/
-
-.navigation-list {
-  list-style: none;
+/* Подключаем шрифты */
+@font-face {
+    font-family: 'Cuprum-Regular';
+    src: url('cuprum.woff2') format('woff2');
+    src: url('cuprum.woff') format('woff'); 
+    font-weight: normal;
+    font-style: normal;
 }
 
 
-/*Ссылки это интерактивные элементы сайта, 
-поэтому нужно определить все возможные состояния.
-
-Состояния наведения делается с помощью псевдокласса
- :hover, а фокуса :focus.*/
-.site-navigation-current a:not([href]) {
-  background-color: var(--basic-black);
-}
-/* User navigation */
-.site-navigation a,
-.user-navigation a {
-  color: var(--basic-white);
-}
-.site-navigation a:hover,
-.site-navigation a:focus,
-.user-navigation a:hover,
-.user-navigation a:focus {
-  background-color: var(--basic-extra-dark);
-}
-
-/*Пройдёмся по преимуществам. 
-Отключим стили списка у всего блока. 
-Весь текст отцентрируем и зададим 
-текстовые параметры для заголовка.*/
-
-
-
-/* header*/
-/* Cтили для header */
-
-html, body {
+/* Сеточные стили */
+html,
+body {
     min-width: 960px;
 }
 
-
-.wrapper-top {
-    background-color: #293449;
-}
-
-
-/* Центрирует содержание header */
-.container {
-    width:  940px;
+.page-header-wrapper {
+    width: 940px;
     margin: 0 auto;
-    padding: 0 10px; 
-}
-
-
-/*В макете Компания "Техномарт", Контакты 
- находятся в одном блоке section. 
- Разметку мы их тоже объединили в 
- <div class="left-block"><!--Левый блок про компанию Техномарт-->
- <div class="right-block"><!--Правый блок про контакты компании-->*/
-
-/*Добавим этому большому разделу фоновое изоражение (если есть),
- зададим цвет фона и шрифта, а также изменим
-размер шрифта для заголовков в разделах.*/
-.left-block h2{
-    width: 605px;
-    margin-right: 55px;
-    font-size: 13px;
-    line-height: 24px;
-    font-weight: 400;
-}
-
-.right-block h2{
-    background-image: url("img/map-popup.png");
-    width: 310px;
-    font-size: 13px;
-    line-height: 24px;
-    font-weight: 400;
-}
-
-/*А теперь стилизуем внутренние блоки, Компания техномарт, Контакты.
- У доставки отключим стилизацию списков, а галерее укажем
-  фон и обводку (если надо).*/
-
-.delivery-choice {
-  list-style: none;
-}
-
-/* Gallery */
-
-.left-block,
-.right-block {
-  border: 7px solid green;
-}
-
-/*Отключим стилизацию списков,ссылки карточек товаров,
- популярные производители, меню(доставка, гарантия, кредит)
-фуутер навигацию и материалы, технику, инструмент, спецпредложения,
-добавим обводку (если надо).*/
-
-.footer-nav {
-  list-style: none;
-  
-}
-.footer-products {
-  list-style: none;
-}
-.social-button-list {
-  list-style: none;   
-}
-
-.list-popular-enterprises {
-  list-style: none;   
-}
-
-
-/*Стилизуем кнопки.
-Используем значение inherit для свойства font
-для переопределения значения по умолчанию.
-выровняем текст по центру, 
-укажем цвет и размер, а также фон. 
-Отключим стили для обводки.*/
-/* Button */
-.button {
-  font: inherit;
-  font-size: 14px;
-  font-weight: 400;
-  text-align: center;
-  color: #ffffff;
-  vertical-align: middle;
-  text-transform: uppercase;
-  background-color: red;
-  border: none;
-  border-radius: 3px;
-  padding: 11px 61px;
-  min-width: 131px; 
-}
-
-/*Так как кнопка это интерактивный элемент
- укажем стили для состояния фокуса и наведения*/
-.button:hover,
-.button:focus,
-.button:active {
-  background-color: green;
-}
-
-.button.disabled,
-.button:disabled {
-  cursor: default;
-  opacity: 0.5;
-  background-color: red;
-}
-
-/*Полям ввода в форме записи добавим 
-наследование шрифта от родителя, 
-прозрачный фон и черную обводку.*/
-/* Appointment */
-
-.search input {
-  font: inherit;
-  background-color: #ffffff; /*transparent*/
-  border: 2px solid black;
-}
-
-.search input:focus {
-  border-color: blue;
-}
-
-/*Для подвала укажем цвет текста и фона,
- чтобы текст был читаем.*/
-/* Main footer */
-.footer-wrapper {
-    background-color: #32425c;
-    color: #ffffff;
-    background-position: 0 0;
-    background-repeat: repeat;
-}
-
-.footer-bottom {
-    width: 100%;
-    background-color: #293449;
-}
-/*
-не получается сделать весь текст фуутера сплошным цветом белый
-не получается применить класс.
-.footer-nav { 
-color: #ffffff;
-}
-*/
-
-
-/*Меняем цвет ссылок и добавляем подчеркивание.
-Добавим стили для состояния наведения и фокуса.*/
-.footer-products a {
-  color: #ffd180;
-  text-decoration: none;
-}
-
-.footer-products a:hover,
-.footer-products a:focus {
-  text-decoration: underline;
-}
-
-.footer-nav a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.footer-nav a:hover,
-.footer-nav a:focus {
-  text-decoration: underline;
-}
-
-.feedback-mail a {
-  color: #ffd180;
-  text-decoration: none;
-}
-
-.feedback-mail a:hover,
-.feedback-mail a:focus {
-  text-decoration: underline;
-}
-
-/*Зададим базовые стили для раздела социальных сетей.
- Выравниваем текст по центру и отменяем стили 
- по умолчанию у списка.
-Задаем белый цвет текста для кнопок.*/
-.footer-social {
-  text-align: center;
-}
-
-.footer-social ul {
-  list-style: none;
-}
-
-.footer-social h2 {
-  font-size: 14px;
-
-}
-
-/* Social button */
-
-.social-button {
-  color: inherit;
-}
-
-.social-link:hover,
-.social-link:focus {
-  background-color: #ffffff;
-}
-
-
-/*У блока копирайта укажем цвет текста и фона.*/
-.footer-copyright .link-developer:hover,
-.footer-copyright .link-developer:focus {
-  color: ;
-  background-color: grey;
-}
-
-/*Осталось сделать базовую стилизацию для модальных окон.
- Задаем цвет текста, фоновое изображение и 
- подходящий цвет фона (если надо).*/
-
-/* Modal */
-
-.modal {
-  color: var(--basic-black);
-  background-color: var(--basic-extra-light);
-  background-image: url("../img/pattern-light.jpg");
-  background-position: 0 0;
-  background-repeat: repeat;
-  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
-}
-
-.modal {
-    position: fixed;
-    color: #000000;
-    background-color: #ffffff;
-    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
-  /*background-repeat: repeat;
-    background-position: 0 0;*/
-}
-
-/*Зададим размеры шрифта в заголовках модальных окон.*/
-.modal-login h2 {
-  font-size: 30px;
-  line-height: 42px;
-}
-
-/*Зададим наследование родительского шрифта, 
-сделаем текст прописным. 
-Установим черный текст, контрастный светлый фон
- и черную обводку.*/
-
-/* Login form */
-
-.login-form input[type="email"],
-.login-form input[type="password"] {
-  font: inherit;
-  color: var(--basic-black);
-  text-transform: uppercase;
-  background-color: var(--basic-extra-light);
-  border: 2px solid var(--basic-black);
-}
-
-.login-form input:focus {
-  border-color: var(--special);
-}
-
-/*Зададим иконки для полей ввода.*/
-.login-icon-user {
-  background-image: url("../img/user.svg");
-  background-position: 270px center;
-  background-repeat: no-repeat;
-}
-
-.login-icon-password {
-  background-image: url("../img/lock.svg");
-  background-position: 270px center;
-  background-repeat: no-repeat;
-}
-
-/*Осталось сделать стилизацию ссылок. 
-Зададим цвет текста и подчеркивание. 
-Отменим подчеркивание при наведении и фокусе.
-Использую для страницы каталог мои заказы - личный кабинет*/
-/* Restore */
-/*
-.restore {
-  color: var(--basic-black);
-  text-decoration: underline;
-}
-
-.restore:hover,
-.restore:focus {
-  text-decoration: none;
-}
-*/
-
-/*Добавим чёрный фон для шапки внутренних страниц(eсли есть необходимость
-Для контентной части внутрнних страниц добавим светлый фон (если есть необходимость)*/
-
-/*Зададим размер шрифта для заголовка h1 */
-.about-hammer-drill {
-  font-size: 30px;
-  line-height: 30px;
-}
-
-/*CSS Каталог*/
-
-/*Перейдём к навигационной цепочке или как её обычно называют
- хлебные крошки.
-Отключим стили для списка, так как они нам не нужны.
-Зададим текстовые параметры для ссылок: 
-размер, цвет, наведение и фокус.*/
-
-/* Breadcrumbs */
-.catalog-navigation, 
-.filter-firms-list,
-.filter-electricity-list,
-.sorting-block  {
-  list-style: none;
-}
-
-
-
-.catalog-sales-list li {
-  list-style: none; 
-}
-
-.user-menu li {
- list-style: none;  
-}
-
-.navigation-list a {
-  list-style: none; 
-  color:white;
-}
-
-
-/*Нам осталось сделать стилизацию пагинации.
- Сбросим стили списка по умолчанию.*/
-/*выполнено стр.469 работает, на 688 не работает*/
-
-
-.pagination-type li{
-   list-style: none; 
-}
-/*Укажем для ссылок фон и цвет текста,
- а также добавим стилизацию для фокуса и наведения.*/
-
-.pagination-type a {
-  color: black;
-  background-color: white;
-}
-
-.pagination-type a:hover,
-.pagination-type a:focus,
-.pagination-type a:active {
-  background-color: #ee3643;
-}
-
-/*стилизацию пагинации */
-.pagination-type {
-  font-family: "PT Sans", "Arial", sans-serif;
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: normal;
-  color: #000000;
-}
-
-.pagination-type {
-  text-transform: uppercase;
-}
-.pagination-type {
+    padding: 0 10px;
     display: flex;
-}
-
-.pagination-button {
-  display: flex;
-  margin-right: 10px;
-  padding-top: 9px;
-  padding-right: 14px;
-  padding-bottom: 9px;
-  padding-left: 15px;
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid #e5e5e5;
-  border-radius: 3px;
-}
-
-.pagination-type .pagination-item-active {
-  color: #ffffff;
-  background-color: #ee3643;
-  border: 1px solid #ee3643;
-}
-
-/*Стиль ссылки на текущую страницу отличается.
-Задаем ,белый цвет текста и красный фон.
-А чтобы стиль ссылки не менялся при взаимодействии,
-дублируем стилевые правила текущей ссылки для
-различных состояний (наведение, фокус, активная ссылка)*/
-.pagination-item-active a,
-.pagination-item-active a:hover,
-.pagination-item-active a:focus,
-.pagination-item-active a:active {
-  color: white);
-  background-color: #ee3643;
+    flex-wrap: wrap;
 }
 
 
-
-.sorting-block a {
-  color: black;
-}
-
-/*Ссылки Мои заказы, Личный кабинет*/
-.user-menu li {
-  color: black;
-  text-decoration: underline;
-}
-
-.user-menu li a:hover,
-.user-menu li a:focus {
-  color: red;
-}
-/*Ссылки По цене, по типу, по функционалу*/
-
-
-.sorting-block a:hover,
-.sorting-block a:focus {
-  text-decoration: red underline dotted;
-}
-
-/*кнопки Оформить заказ - Корзина*/
-/*Сетка для блока*/
-.navigation {
-  margin-bottom: 67px;
-}
-
-/**/
-
-/*сброс внутренних и внешних отступов в блоке  навигации*/
-.navigation-list {
-  margin: 0;
-  padding: 0;
+.page-header-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 
-.navigation-list {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 550px;
-   margin-top: 36px;
-   flex-wrap: wrap;
-}
-
-
-.navigation-list a {
-  display: block;
-  padding: 18px 31px;
-  vertical-align: middle;
-}
-
-
-.navigation-list {
-  width: 940px;
-}
-
-.navigation-list {
-  box-shadow: 0px 6px #293449;
-}
-
-.navigation-list a:hover,
-.navigation-list a:focus {
-  background-color: #293449;
-}
-
-
-.navigation-list a:active {
-  background-color: #1d2739;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.navigation-list {
-  padding-top: 1px;
-  padding-bottom: 0px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Барбершоп - Демонстрация*/
-
-/*Перейдём к фильтрам. Уберём стилизацию у списка.
- Зададим размер и цвет текста. 
- Добавим цвет для фокуса и наведения.*/
-/* Filters */
-
-.filter legend {
-  font-size: 24px;
-  line-height: 30px;
-}
-
-.filter ul {
-  list-style: none;
-  line-height: 18px;
-}
-
-.filter-input-checkbox:hover + label,
-.filter-input-checkbox:focus + label {
-  color: var(--special);
-}
-
-
-/*Начнём стилизовать каталог. 
-Опишем список. 
-Отключим стили для списков, 
-так как они нам не нужны. 
-А пунктам зададим фон, тени и цвет*/
-
-/* Catalog */
-
-.catalog-list {
-  list-style: none;
-}
-
-.catalog-item {
-  background-color: var(--basic-extra-light);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
-}
-
-.catalog-item a {
-  color: var(--basic-black);
-}
-
-
-/*Для заголовка укажем размер и межстрочный интервал.*/
-.catalog-item h3 {
-  font-size: 14px;
-  line-height: 18px;
-}
-
-/*Название категории товара сделаем строчными*/
-.catalog-category {
-  text-transform: none;
-}
-
-
-/*Цене товара зададим параметры шрифта, 
-выравнивание текста по центру, светлый фон*/
-
-.catalog-item-price b {
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  background-color: var(--basic-neutral);
-}
-
-/*Кнопке укажем цвет и межстрочный интервал.*/
-
-.catalog-item-price .button {
-  line-height: 20px;
-  color: var(--basic-white);
-}
-
-
-
-
-
-
-
-
-
-.logo-technomart {
+.header-logo {
     padding-top: 10px;
     padding-bottom: 8px;
     padding-left: 50px;
@@ -764,25 +100,857 @@ color: #ffffff;
 
     background-color: #ee3643;
     -webkit-box-shadow: 0px 5px 0px 0px #b52933;
-            box-shadow: 0px 5px 0px 0px #b52933;
+    box-shadow: 0px 5px 0px 0px #b52933;
 }
 
-/*Состояния наведения делается с помощью псевдокласса
- :hover, а фокуса :focus.*/
-.logo-technomart:hover {
+
+.header-logo:hover {
     background-color: #ca2c37;
 }
 
-.logo-technomart:active {
+
+.header-logo:active {
     background-color: #ba2732;
 }
 
-/*верхний блочный элемент - меню - используем автопрефиксы*/
-.header-top {
+
+
+.header-search-button {
+    width: 17px;
+    height: 17px;
+    background-color: transparent;
+    border: none;
+    opacity: 0.3;
+}
+
+.page-header-search  {
+    position: relative;
+}
+
+.header-search-button:hover {
+    opacity: 1;
+}
+
+.page-header-search input[type="text"]:focus {
+    color: #000000;
+}
+
+.page-header-search input[type="text"]:focus + .header-search-button {
+    opacity: 1;
+}
+
+.page-header-search input[type="text"]:focus + .header-search-button path {
+    fill: red;
+}
+
+
+
+.page-header-search input[type="text"] {
+    background-color: transparent;
+    border: none;
+    padding-top: 12px;
+    /*padding-right: 36px;*/
+    padding-bottom: 12px;
+    /*padding-left: 25px;*/
+    min-width: 240px;
+    /*height: 41px;*/
+
+    cursor: pointer;
+}
+
+
+.inner-page .page-header-search input[type="text"] {
+    min-width: 236px;
+}
+
+
+.page-header-search input[type="text"]:hover {
+    background-color: #212a3a;
+}
+
+.header-search-button:hover {
+    opacity: 1;
+}
+
+
+.page-header-search input[type="text"]:focus,
+.page-header-search input[type="text"]:active {
+    background-color: #ffffff;
+}
+
+.page-header-search input[placeholder] {
+    padding-left: 48px;
+}
+
+.header-search-button {
+    position: absolute;
+    top: 11px;
+    left: 10px;
+}
+
+
+
+.header-user-item {
+    position: relative;
+    display: inline-block;
+
+    padding-top: 12px;
+    padding-right: 34px;
+    padding-bottom: 12px;
+    padding-left: 27px;
+    min-width: 49px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    background-color: #293449;
+}
+
+.header-user-item,
+.header-user-cart {
+    padding-right: 24px;
+    min-width: 40px;
+}
+
+.header-user-item::before {
+    content: "";
+
+    position: absolute;
+    top: 12px;
+    left: 0px;
+
+    width: 14px;
+    height: 16px;
+
+    background-image: url("../img/icon-bookmark.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    opacity: 0.3;
+}
+
+.header-user-item:hover::before {
+    opacity: 1;
+
+}
+
+.header-user-item:active::before {
+    opacity: 0.6;
+
+}
+
+.header-user-item:hover {
+    background-color: #212a3a;
+
+}
+
+.header-user-item:active {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: #161d29;
+}
+
+
+/*.cart-background {*!*/
+/*    background-color: #ee3643;*!*/
+/*    color: green;*!*/
+/*}*/
+.header-user-cart {
+    position: relative;
+
+    display: inline-block;
+
+    padding-top: 12px;
+    padding-right: 31px;
+    padding-bottom: 12px;
+    padding-left: 35px;
+    min-width: 49px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    background-color: #293449;
+}
+
+/*.inner-page .cart {*/
+/*    background-color: #293449;*/
+/*}*/
+
+/*.inner-page .cart-background {*/
+/*    background-color: #ee3643;*/
+/*}*/
+
+.header-user-cart::before {
+    content: "";
+
+    position: absolute;
+    top: 12px;
+    left: 6px;
+
+    width: 15px;
+    height: 16px;
+
+    background-image: url("../img/icon-cart.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    opacity: 0.3;
+}
+
+.header-user-cart:hover::before {
+    opacity: 1;
+}
+
+.header-user-cart:active::before {
+    opacity: 0.6;
+}
+
+/*.inner-page .cart:hover::before {*/
+/*    opacity: 1;*/
+/*}*/
+
+/*.inner-page .page-header-link-basket:active::before {*/
+/*    opacity: 0.6;*/
+/*}*/
+
+.header-user-cart:hover {
+    background-color: #212a3a;
+}
+
+.header-user-cart:active {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: #161d29;
+}
+
+.page-header-order {
+    display: inline-block;
+    padding: 12px 10px;
+    min-width: 130px;
+    text-align: center;
+    vertical-align: middle;
+
+    background-color: #63a63e;
+}
+/* Убрал отступы для inline-block*/
+.header-user-cart,
+.page-header-order {
+    margin-left: -5px;
+}
+
+
+/*.inner-page .order {*/
+/*    padding: 12px 10px;*/
+/*}*/
+
+.page-header-order:hover {
+    background-color: #5fbb2d;
+}
+
+.page-header-order:active {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: #518534;
+}
+
+/*.page-header-order,*/
+/*.page-header-order-btn {*/
+/*    list-style: none;*/
+/*}*/
+
+
+
+.header-user-list {
+    margin-left: auto;
+}
+
+.header-user-list {
+    margin: 0;
+    padding: 0;
+}
+
+
+.page-header-top {
+    background-color: #293449;
+}
+
+
+.header-user-list {
+    /*margin-left: auto;*/
+    margin: 0;
+    padding: 0;
+}
+
+/*.header-user-list a {*/
+/*    font-size: 17px;*/
+/*    line-height: 18px;*/
+/*    font-weight: normal;*/
+/*    color: #ffffff;*/
+/*}*/
+.page-header-search input[type="text"],
+.header-user-link,
+.page-header-link-basket,
+.page-header-order-btn {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 17px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+
+/*середина header*/
+.page-header-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+}
+
+.page-header-wrapper {
+    min-width: 940px;
+}
+
+.page-header-bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+/* h1 блочный элемент*/
+.page-header-title {
+    width: 205px;
+    margin-top: 49px;
+    margin-bottom: 40px;
+    margin-left: 53px;
+    margin-right: 41px;
+}
+/* h1 стили для текста*/
+.page-header-title {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 23px;
+    font-weight: normal;
+    color: #ee3643;
+    font-family: "Cuprum", "Arial", sans-serif;
+}
+
+.header-enter li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header-enter-item {
+    margin-right: 20px;
+}
+
+
+.page-header-nav {
+    margin-bottom: 67px;
+}
+
+.page-header-nav a,
+.footer-nav-list a {
+    color: green;
+}
+.page-header-nav a:hover,
+.page-header-nav a:focus,
+.page-header-nav a:hover,
+.page-header-nav a:focus {
+    background-color: black;
+}
+
+
+.header-navigation {
+    margin-bottom: 64px;
+}
+
+.header-nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.header-nav-list a {
+    display: block;
+    padding: 18px 31px;
+    vertical-align: middle;
+}
+
+.header-nav-list {
+    width: 940px;
+    /*height: 55px;*/
+}
+
+.header-nav-list {
+    -webkit-box-shadow: 0px 6px #293449;
+    box-shadow: 0px 6px #293449;
+}
+/*Состояния элементов*/
+.header-nav-list a:hover,
+.header-nav-list a:focus {
+    background-color: #293449;
+}
+
+.header-nav-list a:active {
+    background-color: #1d2739;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/*Растягиваем нижний фон header
+на всю ширину окна */
+.header {
+    width: 100%;
+    background-color: #f3f7f8;
+}
+
+.page-header-nav {
+    /*width: 100%;*/
+    background-color: #293449
+}
+
+.header {
+    margin-bottom: 58px;
+}
+
+.header-nav-list {
+    padding-top: 1px;
+    padding-bottom: 0px;
+}
+
+.header-nav-list {
+    margin: 0;
+    padding: 0;
+
+}
+.page-header-contact a {
+    font-size: 21px;
+    font-style: normal;
+    line-height: 21px;
+    font-weight: normal;
+    color: #ee3643;
+}
+
+.header-contact-address {
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: normal;
+    color: #32425c;
+}
+
+.header-enter {
+    font-size: 21px;
+    line-height: 21px;
+    font-weight: normal;
+    color: #000000;
+    list-style: none;
+}
+
+/*.inner-page .user-login {*/
+/*    font-size: 21px;*/
+/*    line-height: 21px;*/
+/*    font-weight: normal;*/
+/*    color: #000000;*/
+/*    list-style: none;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.user-orders a,*/
+/*.user-account a {*/
+/*    font-size: 16px;*/
+/*    line-height: 18px;*/
+/*    font-weight: normal;*/
+/*    color: #32425c;*/
+/*    text-decoration: underline;*/
+/*} */
+
+.page-header-bottom {
+    background-color: #f3f7f8;
+}
+
+.page-header-contact-main .page-header-contact {
+    margin: 0;
+}
+
+.page-header-contact-main .page-header-contact {
+    margin-top: 8px;
+    margin-right: 35px;
+    margin-bottom: 5px;
+    border: 3px solid #ffffff;
+    margin-left: 26px;
+}
+.page-header-contact a {
+    display: block;
+    text-align: center;
+}
+
+.page-header-contact {
+    width: 252px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-right: 13px;
+}
+
+.page-header-contact a {
+    position: relative;
+    padding-left: 33px;
+}
+
+.page-header-contact a::before {
+    content: "";
+
+    position: absolute;
+    top: 1px;
+    left: 13px;
+
+    width: 19px;
+    height: 19px;
+
+    background-image: url("../img/icon-phone.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    border-color: red;
+}
+
+.page-header-contact-main .header-contact-address {
+    margin: 0;
+    margin-left: 27px;
+}
+.header-enter-user .header-enter-registry {
+    font-family: "Cuprum", "Arial", sans-serif;
+}
+
+.header-enter li {
+    margin: 0;
+}
+
+.header-enter-user a {
+    display: inline-block;
+    padding-top: 12px;
+    padding-right: 29px;
+    padding-bottom: 12px;
+    min-width: 49px;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 4px;
+    color: #000000;
+
+    background-color: #ffffff;
+}
+.header-enter-user svg {
+    padding-left: 13px;
+    padding-right: 7px;
+    vertical-align: middle;
+}
+
+.header-enter {
+    margin-left: auto;
+    padding-bottom: 21px;
+}
+
+/*.inner-page .user-navigation {*/
+/*    margin-left: auto;*/
+/*    padding-top: 6px;*/
+/*    padding-bottom: 0px;*/
+/*}*/
+
+.header-enter-registry a {
+    display: inline-block;
+    padding-top: 12px;
+    padding-right: 25px;
+    padding-bottom: 12px;
+    padding-left: 22px;
+    min-width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    color: #000000;
+
+    background-color: #ffffff;
+}
+
+.header-enter-user .header-enter-registry {
+    position: relative;
+}
+
+.header-enter-user a:hover,
+.header-enter-registry a:hover {
+    color: #ee3643;
+}
+
+.header-enter-user:hover path {
+    fill: #293449;
+}
+
+.header-enter-user a:active,
+.header-enter-registry a:active {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.header-enter-user:active path {
+    fill: #cacaca;
+}
+
+.header-enter-user:hover::before {
+    opacity: 1;
+}
+
+
+.page-header-nav a {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 17px;
+    line-height: 17px;
+    font-weight: normal;
+    color: #ffffff;
+
+    text-decoration: none;
+    list-style: none;
+}
+
+
+
+.header-enter {
+    padding: 0;
+    margin: 0;
+}
+
+
+.page-header-middle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.page-header-nav {
+    background-color: #32425c;
+}
+
+.header-nav-item {
+    list-style-type: none; /* Убираем маркеры */
+}
+.header-nav-list {
+    margin-left: 0; /* Отступ слева в браузере IE и Opera */
+    padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+}
+
+
+
+
+
+
+/* Футер - верхний блок*/
+
+.page-footer-logo {
+    display: inline-block;
+    padding: 16px 42px;
+    min-width: 136px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ee3643;
+}
+.page-footer-logo {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: normal;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+
+.footer-logo-button {
+    padding-top: 10px;
+    padding-bottom: 8px;
+    padding-left: 50px;
+    padding-right: 48px;
+    min-width: 122px;
+    text-align: center;
+    vertical-align: middle;
+
+    background-color: #ee3643;
+    -webkit-box-shadow: 0px 5px 0px 0px #b52933;
+    box-shadow: 0px 5px 0px 0px #b52933;
+}
+
+.footer-logo-button:hover {
+    background-color: #ca2c37;
+}
+
+.footer-logo-button:active {
+    background-color: #ba2732;
+}
+
+.page-footer-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 34px;
+}
+
+
+/*середина обертка ЦЕНТРОВЩИК */
+
+
+.page-header-wrapper {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page-header-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.page-header-wrapper {
+    min-width: 940px;
+}
+
+
+
+/*Компания Техномарт- контакты*/
+
+.company-promo-container {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: start;
+}
+
+.company-title {
+margin: 0;
+margin-bottom: 26px;
+}
+
+.contacts-title {
+    margin: 0;
+    margin-bottom: 26px;
+}
+
+.company-promo-bloks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.company {
+    width: 605px;
+    margin-right: 55px;
+}
+
+.contacts {
+    width: 310px;
+}
+.company-promo-container .company-discribe {
+    margin: 0;
+    margin-bottom: 26px;
+}
+
+
+.company-promo-container .company-delivery {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.company-promo-container .contacts-description {
+    margin: 0;
+    margin-bottom: 32px;
+}
+
+.company-promo-container .company-delivery {
+    padding-right: 139px;
+}
+
+.company-promo-bloks .address-info {
+    padding-right: 90px;
+}
+
+.company-promo-bloks a {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #ffffff;
+}
+.company-delivery-btn {
+    display: inline-block;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    padding: 10px 40px;
+    min-width: 105px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ee3643;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.company-delivery-btn,
+.company-title,
+.contacts-title,
+.map-google{
+    text-transform: uppercase;
+}
+
+.map-google:hover {
+    background-color: #ca2c37;
+}
+.map-google a {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.map-google-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 11px 57px;
+    min-width: 121px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ee3643;
+    border-radius: 3px;
 }
 
 
@@ -795,64 +963,678 @@ color: #ffffff;
 
 
 
+/*Footer*/
+
+.footer-nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    width: 550px;
+    margin-top: 36px;
+}
+
+/*.inner-page,*/
+ .footer-nav-list{
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.page-footer-middle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 49px;
+}
 
 
 
 
+.footer-contact-address {
+    width: 380px;
+}
+
+.page-footer-contact a {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: normal;
+    color: #f3f7f9;
+}
+
+.page-footer-nav-middle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+    width: 540px;
+    margin: 0;
+}
+
+/*.inner-page,*/
+.footer-goods-company {
+    width: 525px;
+}
+
+/*.footer-bottom,*/
+/*.footer-contacts,*/
+/*.footer-contacts-mail,*/
+/*.footer-copyright {*/
+/*    margin: 0;*/
+/*}*/
+
+.page-footer-bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.page-footer-contacts {
+    min-width: 235px;
+    margin-right: 153px;
+    margin-top: 20px;
+    margin-bottom: 19px;
+    margin-left: 2px;
+}
+
+.page-footer-bottom-social {
+    min-width: 135px;
+    margin-right: 116px;
+    margin-top: 6px;
+}
+
+.page-footer-bottom-developer {
+    min-width: 140px;
+}
+
+.page-footer-bottom-web {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-right: auto;
+
+    margin-left: 48px;
+    padding-top: 4px;
+}
+
+.page-footer {
+    background-color: #32425c;
+}
+
+
+.page-footer-nav-top li,
+.page-footer-nav-middle li {
+    list-style: none;
+}
+
+.footer-nav-list a {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: normal;
+    color: #f3f7f9;
+}
+/* Стили для текста - конец */
+.footer-nav-list li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footer-nav-list a:hover,
+.page-footer-nav-middle a:hover {
+    text-decoration: underline;
+}
+
+.footer-nav-list a:active {
+    color: rgba(241, 245, 247, 0.5);
+    text-decoration: none;
+}
+
+.page-footer-nav-middle a:active {
+    color: rgba(255, 209, 128, 0.5);
+    text-decoration: none;
+}
+
+/* Футер - средний блок */
+.footer-contact-address {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: normal;
+    color: #f3f7f9;
+    margin: 0;
+}
+
+.page-footer-nav-middle a {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: normal;
+    color: #ffd180;
+}
+
+
+.page-footer-nav-middle li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.page-footer-wrapper {
+    width: 100%;
+    background-color: #293449;
+}
+
+.page-footer-contacts {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+.page-footer-bottom-social {
+    text-align: center;
+}
+
+.page-footer-bottom-social-link {
+    color: #ffffff;
+}
+
+.footer-bottom-social-vkontakte {
+    position: relative;
+    display: inline-block;
+    margin-right: 1px;
+    vertical-align: middle;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-decoration: none;
+    background-color: #212a3a;
+    border-radius: 50px;
+}
+
+.footer-bottom-social-vkontakte {
+    background-color: #ee3643;
+}
+
+.footer-bottom-social-vkontakte::before {
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 8px;
+    width: 26px;
+    height: 15px;
+    background-image: url("../img/icon-vk.svg");
+    background-repeat: no-repeat;
+}
+
+.footer-bottom-social-facebook {
+    position: relative;
+    display: inline-block;
+    margin-right: 1px;
+    vertical-align: middle;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-decoration: none;
+    background-color: #212a3a;
+    border-radius: 50px;
+}
+
+.footer-bottom-social-facebook:hover {
+    background-color: #ee3643;
+}
+
+.footer-bottom-social-facebook::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 14px;
+    width: 12px;
+    height: 22px;
+    background-image: url("../img/icon-fb.svg");
+    background-repeat: no-repeat;
+}
+
+.footer-bottom-social-instagram {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-decoration: none;
+    background-color: #212a3a;
+    border-radius: 50px;
+}
+
+.footer-bottom-social-instagram:hover {
+    background-color: #ee3643;
+}
+
+.footer-bottom-social-instagram::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 9px;
+    width: 21px;
+    height: 21px;
+    background-image: url("../img/icon-insta.svg");
+    background-repeat: no-repeat;
+}
+
+.page-footer-bottom-developer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    text-align: right;
+    padding-top: 4px;
+}
+.footer-bottom-feedback,
+.page-footer-bottom-mail {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+.page-footer-bottom-developer a {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #ffd180;
+}
+
+.page-footer-bottom-mail:hover {
+    text-decoration: underline;
+}
+
+.page-footer-bottom-mail:active {
+    color: #ee3643;
+    text-decoration: none;
+}
+
+footer-bottom-feedback,
+.page-footer-bottom-web {
+    text-align: right;
+}
+
+.page-footer-bottom-web {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+.footer-bottom-webstudio{
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #ffd180;
+}
+
+.footer-bottom-webstudio:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom-webstudio:active {
+    color: #ee3643;
+    text-decoration: none;
+}
+
+
+.page-footer-contacts,
+.page-footer-bottom-social,
+.page-footer-bottom-developer,
+.page-footer-bottom-web,
+.page-footer-bottom {
+    margin: 0;
+    padding: 0;
+
+}
 
 
 
+/*Catalog.html*/
+
+.container-catalog-breadcrumbs {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.catalog-breadcrumbs-navigation  {
+    font-family: "PT Sans", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #000000;
+}
+
+.catalog-breadcrumbs-navigation {
+    font-size: 13px;
+}
+
+.catalog-breadcrumbs-navigation a {
+    color: #000000;
+}
+
+.catalog-breadcrumbs-navigation {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 18px;
+}
+
+.catalog-breadcrumbs-navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.catalog-breadcrumbs-navigation {
+    text-transform: uppercase;
+}
+
+.catalog-breadcrumbs-navigation {
+    position: relative;
+}
+
+.catalog-breadcrumbs-navigation li {
+    list-style: none;
+}
+
+.catalog-breadcrumbs-navigation li:nth-child(1) {
+    margin-right: 55px;
+}
+
+.catalog-breadcrumbs-navigation li:nth-child(2) {
+    margin-right: 40px;
+}
+
+.catalog-breadcrumbs-navigation li:nth-child(3) {
+    margin-right: 42px;
+}
+
+.breadcrumbs-current {
+    margin-right: 1px;
+}
 
 
+.catalog-breadcrumbs-navigation li:first-child::before {
+    position: absolute;
+    top: 1px;
+    content: "";
+    background-image: url("../img/icon-home.svg");
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 12px;
+    padding-left: 15px;
+}
+
+.catalog-breadcrumbs-navigation li:first-child::after {
+    position: absolute;
+    top: 2px;
+    left: 24px;
+    content: "";
+    background-image: url("../img/icon-right-small.svg");
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 12px;
+}
+
+.catalog-breadcrumbs-navigation li:nth-child(2)::after {
+    position: absolute;
+    top: 2px;
+    left: 122px;
+    content: "";
+    background-image: url("../img/icon-right-small.svg");
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 12px;
+}
+
+.catalog-breadcrumbs-navigation li:last-child::after {
+    position: absolute;
+    top: 2px;
+    left: 242px;
+    content: "";
+    background-image: url("../img/icon-right-small.svg");
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 12px;
+}
+
+.catalog-hammer-drill {
+    margin-right: 1px;
+}
 
 
+.catalog-title {
+    background-color: #f2f6f8;
+}
+
+.catalog-title h2 {
+    font-family: "Cuprum", "Arial", sans-serif;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: normal;
+    color: #32425c;
+    text-transform: uppercase;
+}
+
+.catalog-title h2 {
+    padding-top: 29px;
+    padding-left: 28px;
+}
+
+.catalog-title {
+    min-height: 89px;
+    margin-bottom: 18px;
+}
+
+/*Карточка товара catalog.html*/
+
+.page-block-item {
+    width: 220px;
+    margin: 20px auto;
+    border: 1px solid #eaeaea;
+}
 
 
+/*.page-block-item {*/
+/*    width: 700px;*/
+/*    margin: 20px auto;*/
+/*    border: 1px solid #eaeaea;*/
+/*}*/
+
+.page-block-item .row {
+    margin-left: -20px;
+}
+
+.page-block-item {
+    position: relative;
+    display: inline-block;
+    width: 218px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    line-height: 20px;
+    font-weight: bold;
+    text-align: center;
+
+    border: 1px solid #ccc;
+}
+
+.page-block-item {
+    font-size: 0;
+}
+
+.page-block-item {
+    font-size: 16px;
+}
+
+.page-block-item .row {
+    margin-left: -20px;
+}
+
+.page-block-item .flag {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+
+    width: 60px;
+    height: 60px;
+
+    text-indent: -1000px;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.page-block-item .flag-new {
+    background: url("...img/new-flag.png") no-repeat 0 0;
+}
+
+.page-block-item .product-card-dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 218px;
+    height: 88px;
+    padding: 40px 0;
+
+    background-color: rgba(255,255,255,0.9);
+    z-index: 10;
+}
+
+.page-block-item .product-card-dropdown .product-card-btn-green,
+.page-block-item .product-card-dropdown .product-card-btn {
+    display: block;
+    width: 129px;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    padding: 7px 0;
+
+    background-color: #63a63e;
+    border: 3px solid #63a63e;
+    border-bottom-color: #367315;
+    border-radius:3px;
+
+    color: white;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Cuprum", sans-serif;
+    line-height: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.page-block-item .actions .product-card-btn {
+    color: #32425c;
+    background: white;
+    border-bottom-color: #63a63e;
+}
+
+.page-block-item .product-card-dropdown {
+    display: none;
+}
 
 
+.page-block-item:hover .product-card-dropdown {
+    display: block;
+}
 
+.page-block-item .product-card-dropdown {
+    display: none;
+}
 
+.page-block-item .image {
+    width: 218px;
+    height: 168px;
+}
 
+.page-block-item .image img {
+    max-width: 100%;
+}
 
+.page-block-item .products-items {
+    min-height: 40px;
+    padding: 0 25px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
 
+.page-block-item .product-card-del {
+    min-height: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
 
+    color: #999;
+    text-decoration: line-through;
+}
 
+.page-block-item .product-card-price {
+    position: relative;
+    width: 80px;
+    margin: 10px auto;
+    margin-bottom: 20px;
+    padding: 10px 30px;
 
+    color: white;
+    background: #ee3643;
+    border-radius: 3px;
+}
 
+.page-block-item .product-card-price:after {
+    content: "";
 
+    position: absolute;
+    top: 0;
+    right: -20px;
 
+    width: 0;
+    height: 0;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    border: 20px solid white;
+    border-left-color: #ee3643;
+}
 
 
 
