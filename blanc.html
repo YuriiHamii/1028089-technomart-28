@@ -3,84 +3,238 @@
   <head>
     <meta charset="UTF-8">
     <title>HTML Academy: Техномарт</title>
-   </head>
-  <body>
-  <header>
-    <div class = "header-top"> 
-  	<a href="index.html"><img  src = "#" alt = "ТЕХНОМАРТ"> </a>
-    <label><input type="search" name="s" placeholder="Поиск:"></label>
-    <a href="blanc.html">Закладки</a>
-    <a href="blanc.html">Корзина</a>
-    <a href="blanc.html">Оформить заказ</a> 
+    <meta name="keyworccds" content="строительные материалы, стрительный инструмент, строительная техника,
+                crblrb 50%, перфораторы, bosch, makita, dewalt, интерскол, hitachi, lg, aeg, metabo">
+    <meta name="description" content="интернет магазин строительного инструмента">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body class="page-body">
+
+  <!--CSS стилизация header-->
+  <header class="page-header">
+
+      <!--БЛОК 1200x42 верхний-->
+      <div class="page-header-top">
+
+       <!--БЛОК 940x278 верхний блочный элемент,
+        (c вложенным контейнером для центровки)  -->
+        <div class="page-header-wrapper">
+
+            <a  class="page-footer-logo footer-logo-button" href="#nowhere">Техномарт
+            </a>
+            <form class="page-header-search" action="#nowhere" method="get" >
+               <label class="visually-hidden" for="user-search">Поиск</label>
+                  <input class="header-search-input" id="user-search"  type="text" placeholder="Поиск:">
+                    <button class="header-search-button" type="button" value="">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                        <path fill="#ffffff" d="M17 15.586l-3.542-3.542A7.465 7.465 0 0 0 15 7.5 7.5 7.5 0 1 0 7.5
+                        15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 4.467 4.467 2 7.5 2 10.532 2
+                         13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 0 1 2 7.5z"/>
+                      </svg>
+                    </button>
+            </form>
+<!--            <div class="page-header-user">-->
+                <ul class="header-user-list">
+                    <li class="header-user-item">
+                        <a class="header-user-link" href="#nowhere">
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">-->
+<!--                            <path fill="#ffffff" d="M14 15c0 .55-.368.741-.818.426l-5.363-3.765c-.45-.315-1.187-.315-1.637 0L.818 15.426C.368 15.741 0 15.55 0 15V1c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v14z"/>-->
+<!--                            </svg>-->
+                            Закладки: 0
+                        </a>
+                    </li>
+                    <li class="header-user-cart">
+                        <a class="page-header-link-basket" href="#nowhere">
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">-->
+<!--                                <circle fill="#ffffff" cx="4.5" cy="13.5" r="1.5"/>-->
+<!--                                <circle fill="#ffffff" cx="12.5" cy="13.5" r="1.5"/>-->
+<!--                                <path fill="#ffffff" d="M15 2H4.07l-.422-2H0v2h2.031l1.985 9H15V9H9.441L15 6.951z"/>-->
+<!--                            </svg>-->
+                            Корзина: 0
+                        </a>
+                    </li>
+                    <li class="page-header-order">
+                        <a class="page-header-order-btn" href="#nowhere">Оформить заказ</a>
+                    </li>
+                </ul>
+<!--            </div>-->
+        </div>
+      </div>
+
+      <!--нижний блок для информации
+      <div class="page-header-bottom">-->
+
+    <!--БЛОК 1200x273 нижни-общий-->
+    <div class="page-header-bottom">
+
+            <!--БЛОК 940x153 средний-блок
+            (c вложенным контейнером для центровки)-->
+            <div class="page-header-wrapper">
+                <div class="page-header-middle">
+                      <h1 class="page-header-title">Интернет-магазин строительных материалов и инструментов для ремонта
+                      </h1>
+                    <div class="page-header-contact-main">
+                         <div class="page-header-contact">
+                             <a class="header-contact-phone" href="#nowhere">
+<!--                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">-->
+<!--                            <path fill="#B7BFC8" d="M15.572 18.985h-.941c-4.129-.488-7.157-2.408-9.359-4.864C3.062-->
+<!--                              11.66 1.318 8.492.978 4.228V3.084c.078-.774.459-1.304.898-1.757C2.425.766 3.25.044-->
+<!--                               4.002.019c.554-.018 1.5.38 1.879.899.329.446.504 1.339.656 2.003.154.671.505 1.643.408-->
+<!--                                2.289-.148 1.007-1.487 1.434-1.879 2.166 1.307 3.135 3.443 5.439 6.293 7.031.715-.392-->
+<!--                                 1.346-1.572 2.332-1.595.359-.009.818.178 1.184.286.402.121.75.275 1.104.408.596.224-->
+<!--                                  1.648.521 2.004 1.021.365.513.57 1.356.49 1.879-.164 1.041-1.879 2.197-2.901 2.579z"/>-->
+<!--                        </svg>-->
+                        +7 (812) 555-05-55
+                             </a>
+                         </div>
+                                 <p class="header-contact-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>                    </div>
+                <div class="page-header-enter">
+                    <ul class="header-enter">
+                        <li class="header-enter-user login-link">
+                            <a class="header-enter-link" href="#nowhere" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                                    <path fill="#c5c5c5" d="M14.875 8.5L6 0v6H0v5h6v6z"/>
+                                    <path fill="#c5c5c5" d="M16.986 15.01h-5.027V17h5.027c2.178 0 3.004-1.813.029-3.026V3.028C19.99 1.811 19.164 0 16.986 0h-5.027v1.99h5.027c.839 0 .992.6811.01 1.057v10.904c-.017.376-.171 1.059-1.01 1.059z"/>
+                                </svg>
+                                Войти
+                            </a>
+                        </li>
+                        <li class="header-enter-registry">
+                            <a class="header-enter-link" href="#nowhere">Регистрация</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                <!--БЛОК навигации 940x60 вопрос цетровки?-->
+                  <nav class="page-header-nav">
+                      <ul class="header-nav-list">
+                          <li class="header-nav-item"><a class="header-nav-link">Главная</a></li>
+                          <li class="header-nav-item"><a class="header-nav-link" href="#nowhere" >Компания</a></li>
+                          <li class="header-nav-item"><a class="header-nav-link" href="catalog.html" >Каталог</a></li>
+                          <li class="header-nav-item"><a class="header-nav-link" href="#nowhere" >Новости</a></li>
+                          <li class="header-nav-item"><a class="header-nav-link" href="#nowhere" >Спецпредложения</a></li>
+                          <li class="header-nav-item"><a class="header-nav-link" href="#nowhere" >Доставка</a></li>
+                          <li class="header-nav-item"><a class="header-nav-link" href="#nowhere" >Контакты</a></li>
+                      </ul>
+                  </nav>
+                </div>
+            </div>
     </div>
 
-    <div class = "header-contact"> 
-        <p>Интернет-магазин строительных материалов и инструментов для ремонта</p>
-    <div class = "telephone-adress">
-           <a href="blanc.html">+7 (812) 555-05-55</a>
-           <address>г.Санкт-Петербург, ул.Б.Конюшенная, д. 19/8</address>
-    </div>
-           <a href="blanc.html">Вoйти</a>  
-           <a href="blanc.html">Регистрация</a> 
-    </div>
-    
-     	<nav> 
-    <ul>
-      <li><a href="index.html">Главная</a></li>
-      <li><a href="blanc.html">Компания</a></li>
-      <li><a href="catalog.html" target="blank">Каталог</a></li>
-      <li><a href="blanc.html">Новости</a></li>
-      <li><a href="blanc.html">Спецпредложения</a></li>
-      <li><a href="blanc.html">Доставка</a></li>
-      <li><a href="blanc.html">Контакты</a></li>
-    </ul>
-    </nav>
-   </header>
+
+<!--Общий БЛОК 1200х300 footer-->
+<footer class="page-footer">
 
 
+    <!--Верхний БЛОК 1200х193 footer-->
+    <div class="page-footer-top">
+       <!--Центровщик - верхней части-->
+       <div class ="page-header-wrapper">
+           <div class="page-footer-row">
+               <a class="page-footer-logo footer-logo-button">Техномарт
+<!--                     <img src="logo-technomart.svg" alt="техномаркет" width="108" height="18">-->
+               </a>
+           </div>
+           <div class ="page-footer-nav-top">
+  	          <ul class="footer-nav-list">
+                  <li class="footer-nav-item"><a class="footer-nav-link" href="#nowhere">Компания</a></li>
+                  <li class="footer-nav-item"><a class="footer-nav-link" href="#nowhere">Новости</a></li>
+                   <li class="footer-nav-item"><a class="footer-nav-link" href="#nowhere">Каталог</a></li>
+                  <li class="footer-nav-item"><a class="footer-nav-link" href="#nowhere">Доставка</a></li>
+                   <li class="footer-nav-item"><a class="footer-nav-link" href="#nowhere">Контакты</a></li>
+  	          </ul>
+           </div>
 
-
-<footer>
-    <div class = "footer-top">
-  	 <div id="container-top">
-    <img src = "#" alt = "ТЕХНОМАРТ"> 
-  	<ul>
-  		<li> <a class = "" href = "blanc.html">Компания</a> </li>
-  		<li> <a class = "" href = "blanc.html">Новости</a> </li>
-  		<li> <a class = "" href = "catalog.html">Каталог</a> </li>
-  		<li> <a class = "" href = "blanc.html">Доставка</a> </li>
-  		<li> <a class = "" href = "blanc.html">Контакты</a> </li>
-  	</ul>
-  	    <address>г.Санкт-Петербург, ул.Б.Конюшенная, д.19/8</address>
-        <a href = "blanc.html">+7 (812) 555-05-55</a>
-	    <ul>
-  		<li> <a class = "" href = "catalog.html">Материалы</a> </li>
-  		<li> <a class = "" href = "catalog.html">Техника</a> </li>
-  		<li> <a class = "" href = "catalog.html">Инструмент</a> </li>
-  		<li> <a class = "" href = "catalog.html">Спецпредложения</a> </li>
-  	  	</ul>
-     </div>
+         <div class="page-footer-middle">
+                    <div class="page-footer-contact">
+                        <p class="footer-contact-address">г.Санкт-Петербург, ул.Б.Конюшенная, д.19/8</p>
+                        <a class="footer-contact-phone" href="#nowhere">+7 (812) 555-05-55</a>
+	                </div>
+                  <!--Навигация - footer - низ-->
+                  <ul class="page-footer-nav-middle footer-nav-yellow">
+                      <li class="footer-nav-item"><a class="footer-nav-link-yellow" href="#nowhere">Материалы</a></li>
+                      <li class="footer-nav-item"><a class="footer-nav-link-yellow" href="#nowhere">Техника</a></li>
+                      <li class="footer-nav-item"><a class="footer-nav-link-yellow" href="#nowhere">Инструмент</a></li>
+                      <li class="footer-nav-item"><a class="footer-nav-link-yellow" href="#nowhere">Спецпредложения</a></li>
+                  </ul>
+         </div>
+         </div>
     </div>
 
-  <div class = "footer-bottom">
-     <div id="container-bottom">
-		<p>© 2010-2019 Компания "Техномарт"Все права защищены</p>
-    <div class = "social-btn"></div>
-    <ul>
-	    <li><a class = "social-link" href = "https://vc.com">Vkontakte</a></li>
-  	  <li><a class = "social-link" href = "https://facebook.com/">Facebook</a></li>
-  	  <li><a class = "social-link" href = "https://www.instagram.com">Instagram</a></li>
-     </ul>  
+
+
+    <!--БЛОК  1200х107 нижняя часть footer.-->
+    <div class="page-footer-bottom">
+        <!--Центрируем нижнюю часть footer-->
+        <div class ="page-header-wrapper">
+                <p class="page-footer-contacts">© 2010-2020 Компания "Техномарт"<br>Все права защищены
+                </p>
+                <!-- Список ссылок разметим как <ul>.-->
+                <ul class="page-footer-bottom-social">
+	                    <li class="footer-bottom-social-vkontakte">
+                          <a class="page-footer-bottom-social-link" href ="https://vc.com">
+<!--                              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="15" viewBox="0 0 26 15"><path fill="#FFF" d="M16.138 11.51c.956-.309 2.18 2.04 3.483 2.939.978.681 1.727.534 1.727.534l3.473-.05s1.815-.112.957-1.554c-.071-.12-.503-1.069-2.585-3.022-2.177-2.043-1.882-1.712.739-5.244 1.597-2.153 2.236-3.468 2.036-4.028-.192-.539-1.365-.399-1.365-.399L20.69.713c-.381.001-.704.119-.851.515-.003.004-.621 1.666-1.445 3.079-1.741 2.989-2.436 3.148-2.724 2.961-.661-.433-.494-1.737-.494-2.664 0-2.897.432-4.105-.846-4.417-.427-.104-.739-.172-1.828-.182-1.392-.021-2.574 0-3.244.329-.445.223-.786.712-.579.74.26.035.843.16 1.155.586.401.552.389 1.789.389 1.789s.229 3.411-.54 3.834c-.528.29-1.25-.302-2.803-3.016-.793-1.388-1.392-2.922-1.392-2.922s-.116-.285-.326-.441c-.25-.185-.6-.244-.6-.244L.848.684S.29.7.085.946c-.182.218-.015.668-.015.668s2.909 6.881 6.203 10.347c3.02 3.182 6.452 2.971 6.452 2.971h1.555s.469-.054.709-.312c.224-.24.214-.691.214-.691s-.031-2.109.935-2.419z"/>-->
+<!--                              </svg>-->
+                          </a>
+                      </li>
+  	                  <li class="footer-bottom-social-facebook">
+                          <a class = "page-footer-bottom-social-link" href = "https://facebook.com/">
+<!--                             <svg width="44" height="44" viewBox="0 0 44 44" fill="none"-->
+<!--                                  xmlns="http://www.w3.org/2000/svg">-->
+<!--                                 <path fill-rule="evenodd" clip-rule="evenodd"-->
+<!--                                       d="M21.8938 1.4839C33.1232 1.4839 42.2265 10.5873 42.2265 21.8169C42.2265-->
+<!--                                        33.0461 33.1232 42.1494 21.8938 42.1494C10.6643 42.1494 1.56108 33.0461-->
+<!--                                         1.56108 21.8169C1.56108 10.5873 10.6643 1.4839 21.8938 1.4839Z"-->
+<!--                                       fill="#212A3A"/>-->
+<!--                                 <path d="M28 15V11H24C21.7909 11 20 12.7909 20-->
+<!--                                 15V19H16V23H20V33H24V23H28V19H24V15H28Z" fill="white"/>-->
+<!--                             </svg>-->
+                          </a>
+                      </li>
+  	                  <li class="footer-bottom-social-instagram">
+                          <a class = "page-footer-bottom-social-link" href = "https://www.instagram.com">
+<!--                             <svg width="44" height="44" viewBox="0 0 44 44" fill="none"-->
+<!--                                  xmlns="http://www.w3.org/2000/svg">-->
+<!--                                 <path fill-rule="evenodd" clip-rule="evenodd"-->
+<!--                                       d="M21.8938 1.4839C33.1233 1.4839 42.2265 10.5873 42.2265 21.8169C42.2265-->
+<!--                                       33.0461 33.1233 42.1494 21.8938 42.1494C10.6643 42.1494 1.56112-->
+<!--                                        33.0461 1.56112 21.8169C1.56112 10.5873 10.6643 1.4839 21.8938 1.4839Z"-->
+<!--                                       fill="#212A3A"/>-->
+<!--                                 <path fill-rule="evenodd" clip-rule="evenodd"-->
+<!--                                       d="M14 11H29C30.65 11 32 12.35 32 14V29C32 30.65 30.65 32 29 32H14C12.35 32-->
+<!--                                       11 30.65 11 29V14C11 12.35 12.35 11 14 11ZM25 21.5C25 19.57 23.43 18 21.5-->
+<!--                                       18C19.57 18 18 19.57 18 21.5C18 23.43 19.57 25 21.5 25C23.43 25 25 23.43 25-->
+<!--                                       21.5ZM14 29V20H15.181C15.0626 20.4913 15.0019 20.9947 15 21.5C15 25.0899-->
+<!--                                       17.9101 28 21.5 28C25.0899 28 28 25.0899 28 21.5C27.9986 20.9946 27.9379-->
+<!--                                       20.4912 27.819 20H29V29H14ZM25 18H29V14H25V18Z" fill="white"/>-->
+<!--                             </svg>-->
+                          </a>
+                      </li>
+                </ul>  
+                <!--Ссылки на разработчика сайта разметим параграфом.-->
+                <div class="page-footer-bottom-developer">
+                        <p class="footer-bottom-feedback">Обратная связь:</p>
+                             <a  class="page-footer-bottom-mail" href="#nowhere">mail@htmlacademy.ru
+                             </a>            
+                        <p class="page-footer-bottom-web">Разработано -</p>
+                            <a class="footer-bottom-webstudio" href="https://htmlacademy.ru">htmlacademy.ru
+                            </a>
+                </div>
+         </div>
    </div>
-
-  	<span>Обратная связь:</span>
-    <a class href = "blanc.html">mail@htmlacademy.ru</a>
-  	<span>Разработано - </span>
-    <a class href = "blanc.html">htmlacademy.ru</a>
-  </div>
-
-
-
 </footer>
-  </body>
+
+
+
+
+
+
+</body>
+
 </html>
+
+
